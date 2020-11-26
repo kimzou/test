@@ -1,3 +1,9 @@
+language: php
+
+php: 7.2
+
+script:
+    echo "skipping test"
 
 after_success:
     deploy:
