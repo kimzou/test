@@ -1,0 +1,9 @@
+language: php
+
+php: 7.2
+
+after_success:
+    deploy:
+        script: deploy.sh
+        on:
+            branch: dev
