@@ -7,7 +7,7 @@ script:
 
 after_success:
     deploy:
-	provider: script
-        script: deploy.sh
+		provider: script
+        script: bash deploy.sh
         on:
             branch: dev
