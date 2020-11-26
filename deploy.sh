@@ -12,8 +12,8 @@
 #git checkout prod
 #git pull deploy 
 
-git fetch
-git checkout prod
+git fetch --depth=1 git@github.com:kimzou/test.git refs/heads/*:refs/remotes/origin/*
+git checkout origin prod
 git merge dev
 git push origin prod
 
