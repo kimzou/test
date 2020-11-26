@@ -5,10 +5,13 @@
 
 #deploy on dev server
 #git remote add deploy ssh://$ADDRESS/test
-git push deploy dev
+#git push deploy dev
 
 #deploy on prod server
-git checkout prod
-git pull deploy 
+#git checkout prod
+#git pull deploy 
 
+git checkout prod
+git merge dev
+git push origin prod
 
