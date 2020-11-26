@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 #ssh connection
 
 
@@ -11,6 +12,7 @@
 #git checkout prod
 #git pull deploy 
 
+git fetch
 git checkout prod
 git merge dev
 git push origin prod
