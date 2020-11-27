@@ -1,13 +1,12 @@
 language: php
-
 php: 7.2
-
-script:
-    echo "skipping test"
-
+script: echo "skipping test"
 deploy:
-    provider: script
-    script: bash deploy.sh
-    skip_cleanup: true
-    on:
-        branch: dev
+  provider: script
+  script: bash deploy.sh
+  skip_cleanup: true
+  on:
+    branch: dev
+before_install:
+- openssl aes-256-cbc -K $encrypted_8fa024c173a1_key -iv $encrypted_8fa024c173a1_iv
+  -in selfserver.pem.enc -out ~\/.ssh/selfserver.pem -d
