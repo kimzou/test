@@ -14,11 +14,11 @@ echo "before remote added"
 echo "SERVER_ADDRESS = $SERVER_ADDRESS"
 echo "DIR = $DIR"
 #git config --global push.default matching
-git remote add deploy ssh://$SEVER_ADDRESS/$DIR
+git remote add deploy ssh://$SEVER_ADDRESS:$DIR
 #git remote add deploy $SERVER_ADDRESS/$DIR
 echo "After add remote & before pull"
-#git pull deploy dev
-git pull origin dev
+git pull deploy dev
+#git pull origin dev
 echo "After git pull"
 
 
