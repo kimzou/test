@@ -10,6 +10,9 @@ PRODUCTION="prod"
 #chmod 600 .travis/selfserver.pem # Allow read access to the private key
 #ssh-add .travis/selfserver.pem # Add the private key to SSH
 
+echo "before remote added"
+echo "SERVER_ADDRESS = $SERVER_ADDRESS"
+echo "DIR = $DIR"
 #git config --global push.default matching
 git remote add deploy ssh://$SEVER_ADDRESS/$DIR
 git pull deploy dev
