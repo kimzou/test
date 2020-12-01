@@ -15,7 +15,9 @@ echo "SERVER_ADDRESS = $SERVER_ADDRESS"
 echo "DIR = $DIR"
 #git config --global push.default matching
 git remote add deploy ssh://$SEVER_ADDRESS/$DIR
+echo "After add remote & before pull"
 git pull deploy dev
+echo "After git pull"
 
 
 #deploy on prod server
