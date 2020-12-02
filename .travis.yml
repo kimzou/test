@@ -1,6 +1,8 @@
 language: php
 php: 7.2
 script: echo "skipping test"
+addons:
+  ssh_known_hosts: ec2-35-181-29-4.eu-west-3.compute.amazonaws.com
 before_install:
 - openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d 
 - eval "$(ssh-agent -s)"
