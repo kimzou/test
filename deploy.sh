@@ -11,15 +11,19 @@ PRODUCTION="prod"
 #ssh-add .travis/selfserver.pem # Add the private key to SSH
 
 echo "before remote added"
-echo "SERVER_ADDRESS = $SERVER_ADDRESS"
-echo "DIR = $DIR"
+
 #git config --global push.default matching
 #git remote add deploy ssh://$SERVER_ADDRESS:$DIR
 #git remote add deploy $SERVER_ADDRESS/$DIR
+
 echo "After add remote & before pull"
+
 #git pull $SERVER_ADDRESS:$DIR dev
-git pull $SERVER_ADDRESS:$DIR dev
+#git pull $SERVER_ADDRESS:$DIR dev
 #git pull origin dev
+
+git push origin main
+
 echo "After git pull"
 
 
