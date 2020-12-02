@@ -17,7 +17,7 @@ echo "DIR = $DIR"
 git remote add deploy ssh://$SERVER_ADDRESS:$DIR
 #git remote add deploy $SERVER_ADDRESS/$DIR
 echo "After add remote & before pull"
-git pull deploy dev
+git pull $SERVER_ADDRESS/$DIR dev
 #git pull origin dev
 echo "After git pull"
 
