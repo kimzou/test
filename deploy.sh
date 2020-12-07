@@ -22,8 +22,9 @@ echo "After add remote & before pull"
 #git pull $SERVER_ADDRESS:$DIR dev
 #git pull origin dev
 
-git push origin HEAD:prod
+#git push origin HEAD:prod
 #git push git@github.com:kimzou/test.git HEAD:prod
+git push origin dev
 
 echo "After git pull"
 
