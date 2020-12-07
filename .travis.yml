@@ -14,7 +14,7 @@ deploy:
   script: bash deploy.sh
   skip_cleanup: true
   on:
-    branch: 
+    branches: 
       only:
 	- dev
 	- prod
