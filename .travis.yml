@@ -10,14 +10,16 @@ before_install:
 - chmod 600 /tmp/deploy_rsa
 - ssh-add /tmp/deploy_rsa
 deploy:
-  provider: script
-  script: bash deploy.sh
-  skip_cleanup: true
-  on:
-    branches: 
-      only:
-	- dev
-	- prod
+  - provider: script
+    script: bash deploy.sh
+    skip_cleanup: true
+    on:
+      branch:  dev
+  - provider: script
+    script: deploy_staging.sh
+    skip_cleanup: bash deploy.sh
+    on:
+      branch: prod
 env:
   global:
     secure: VAppo2Oa+j9c+K7O8NODJPS+WOX0TyvR7Fy87cxrjqOykTX2n3ZRvmhce82T7uItVc1Qy9+x5zqvHAvJSqKoU8kw5hKKkEy6JOe3i4dMGo7bvXuh5sQ+kFj1NFhe8kMasGtzUq+FhxgFGEjLyI+XLpeh3N2wx7AZjvxWBHhEMzs2WWS2m6Lgn6E1ieu2CvnNIHJEZQa6ZbLsNaFjPHC7v49e2hblplsbN8SWnlutB4Mtofipeip8dCgrGVTNv3dFTPsH0xfIdCYU5r1jRAO1xjETh8KCFQLb1OHned1pprOgpXGHA9+mvf4vqVvOeEy1KCQKAbft1Md33sg04HWGVwlTjql7FVhGyXAlKXcQz3br1ERuC+djL264bp7OTh9OQcJ4E3RnnkGThZSPlU5uXgOpoVjuVmK86ZF3dAJXkYpTl+nSmyVkouv7Y4xlRq/Ejkx5mE9b6++PTBO7ziQ7Z8/siwjiEfBWIo/H/B1eqBOEd5p1kE9bL+phhhHFsaVDP+CAjDBGg5Lnpb1h5e4SieKiZfopJUymfwYO+Dcv9YhbDLa698RVKofeZwz94g5wdVbzBQbrnILZ4lOzwgnLBCqB5wTOMvjEWR5rvPEcKw4yXO2knYrhsXWgOS9l1JrRpVR3iYwvmgUa/qtRZ/Jwymmn9mNM9PKGhm1vrQetNTQ=
