@@ -14,7 +14,7 @@ echo "before remote added"
 
 #git config --global push.default matching
 #git remote add deploy ssh://$SERVER_ADDRESS:$DIR
-#git remote add deploy $SERVER_ADDRESS/$DIR
+git remote add deploy $SERVER_ADDRESS:$DIR
 
 echo "After add remote & before pull"
 
@@ -26,7 +26,9 @@ echo "After add remote & before pull"
 #git push git@github.com:kimzou/test.git HEAD:prod
 
 git fetch --all
-git push $SERVER_ADDRESS:$DIR dev
+#git push $SERVER_ADDRESS:$DIR dev
+git push deploy dev
+
 
 #git checkout prod
 #git pull origin prod
