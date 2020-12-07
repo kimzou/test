@@ -24,11 +24,14 @@ echo "After add remote & before pull"
 
 #git push origin HEAD:prod
 #git push git@github.com:kimzou/test.git HEAD:prod
-git fetch --all
-git checkout prod
-git pull origin prod
 
-echo "After git pull"
+git fetch --all
+git push $SERVER_ADDRESS:$DIR dev
+
+#git checkout prod
+#git pull origin prod
+
+echo "After git push"
 
 
 #deploy on prod server
